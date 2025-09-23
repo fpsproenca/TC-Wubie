@@ -1,0 +1,66 @@
+/* Zerando as margens e definindo uma fonte padrão pro corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* Um cinza bem clarinho pro fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* A caixa principal do nosso aplicativo */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* Estilo do nosso título principal */
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Estilo do botão principal */
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* A mãozinha pra mostrar que é clicável */
+    margin-bottom: 20px;
+}
+
+/* Efeito especial quando passa o mouse em cima do botão */
+button:hover {
+    background-color: #0056b3; /* Um azul um pouco mais escuro */
+}
+
+/* Estilos para a lista de redes pra dps */
+.rede-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.rede-segura {
+    color: green;
+    font-weight: bold;
+}
+
+.rede-insegura {
+    color: red;
+    font-weight: bold;
+}
