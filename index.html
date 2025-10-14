@@ -7,15 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
         <h1>Wubie</h1>
         
+        <div class="toggle-theme">
+            <span>🌞</span>
+            <button id="toggle-darkmode">Alterar modo</button>
+            <span>🌜</span>
+        </div>
+
         <button id="btn-escanear">Escanear redes</button>
-
-        <div id="lista-redes"></div>
+        <button id="btn-atualizar">Novo Scan</button>
+        
+        <div id="alerta-topo"></div>
+        
+        <div id="contagem-redes" style="display:none;"></div>
+        
+        <div class="redes-categorias" style="display:none;">
+            <h2>Redes Seguras</h2>
+            <div id="lista-seguras"></div>
+            <h2>Redes Inseguras</h2>
+            <div id="lista-inseguras"></div>
+        </div>
+        <div id="mensagem-inicial">Clique em "Escanear redes" para iniciar.</div>
     </div>
-
     <script src="scripts.js"></script>
 </body>
 </html>

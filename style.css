@@ -1,66 +1,169 @@
-/* Zerando as margens e definindo uma fonte padrão pro corpo da página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5; /* Um cinza bem clarinho pro fundo */
+    background-color: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background 0.5s;
 }
-
-/* A caixa principal do nosso aplicativo */
 .container {
     background-color: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 450px;
+    max-width: 98vw;
     text-align: center;
 }
-
-/* Estilo do nosso título principal */
 h1 {
     color: #333;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+    font-size: 2rem;
 }
-
-/* Estilo do botão principal */
+h2 {
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    margin-top: 28px;
+    text-align:left;
+}
 button {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     font-size: 16px;
     font-weight: bold;
     color: white;
     background-color: #007bff;
     border: none;
     border-radius: 5px;
-    cursor: pointer; /* A mãozinha pra mostrar que é clicável */
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    margin-top: 2px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.09);
+    cursor: pointer;
+    transition: background 0.2s;
 }
-
-/* Efeito especial quando passa o mouse em cima do botão */
-button:hover {
-    background-color: #0056b3; /* Um azul um pouco mais escuro */
+button:hover, .btn-copy:hover {
+    background-color: #0056b3;
 }
-
-/* Estilos para a lista de redes pra dps */
+.toggle-theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    gap: 12px;
+}
+#alerta-topo .alerta-insegura {
+    background: #ffeaec;
+    color: #b7001d;
+    font-weight: bold;
+    padding: 8px 0;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ffc1ce;
+}
+#alerta-topo .alerta-segura {
+    background: #ddfbe2;
+    color: #137628;
+    font-weight: bold;
+    padding: 8px 0;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #b3e8bb;
+}
+#contagem-redes {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+.seguro-texto {
+    color: #2b7a0b;
+    font-weight: bold;
+}
+.inseguro-texto {
+    color: #b7001d;
+    font-weight: bold;
+}
+.redes-categorias {
+    width: 100%;
+}
 .rede-item {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    background: #f7f7fa;
+    border: 1px solid #dedede;
+    border-radius: 7px;
     margin-bottom: 10px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: background 0.4s;
+}
+.rede-segura {
+    border-left: 5px solid #4caf50;
+}
+.rede-insegura {
+    border-left: 5px solid #d11555;
+    background: #fff4f4;
+}
+.icone-wifi {
+    font-size: 1.4em;
+    margin-right: 8px;
+}
+.ssid {
+    flex: 1.6;
+    font-weight: bold;
+    margin-left: 7px;
     text-align: left;
 }
-
-.rede-segura {
-    color: green;
-    font-weight: bold;
+.seg-label {
+    flex: 1;
+    color: #0060b6;
+    font-size: 0.97em;
+    padding-left: 7px;
+}
+.nivel-sinal {
+    flex: 0.6;
+    font-size: 0.97em;
+    padding-left: 4px;
+}
+.btn-copy {
+    padding: 5px 12px;
+    font-size: 0.95em;
+    background: #b6d2fe;
+    color: #222;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 7px;
+    margin-right: -5px;
+    transition: background 0.25s;
+}
+.btn-copy:hover {
+    background: #87bdfc;
 }
 
-.rede-insegura {
-    color: red;
-    font-weight: bold;
+/* Darkmode extras */
+body.darkmode {
+    background-color: #23242a;
 }
+body.darkmode .container {
+    background-color: #2d3140;
+    color: #f8f8f8;
+}
+body.darkmode h1,
+body.darkmode h2 {
+    color: #f8f8f8;
+}
+body.darkmode .rede-item {
+    background: #23242a;
+    border: 1px solid #393b49;
+}
+body.darkmode .rede-segura { border-left: 5px solid #46e36c;}
+body.darkmode .rede-insegura { border-left: 5px solid #ff5f91; background: #302337;}
+body.darkmode #alerta-topo .alerta-insegura { background: #4b192a; color: #ffc5dc; border: 1px solid #ff5f91;}
+body.darkmode #alerta-topo .alerta-segura { background: #113b1d; color: #aaf7bb; border: 1px solid #37c887;}
+body.darkmode .ssid {color: #fafafa;}
+body.darkmode .seg-label {color: #81b9ff;}
+body.darkmode .btn-copy {background: #313b59; color: #daf6ff;}
+body.darkmode .btn-copy:hover {background: #4160a6;}
